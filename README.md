@@ -1,16 +1,166 @@
-# React + Vite
+# 🎓 LCM Learning Adventure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An **interactive math learning game** built with **React + Vite** for students in grades 4–7.  
+It helps students understand the concept of **LCM (Lowest Common Multiple)** through fun animations, sound effects, and quizzes.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Features
 
-## React Compiler
+| Feature | Description |
+|----------|-------------|
+| 🎓 **Animated intro** | Introduces the LCM concept with examples |
+| 🎮 **Interactive Game** | Students find the LCM of two numbers |
+| ✅ **Correct/Wrong Feedback** | Real-time sounds for right and wrong answers |
+| 🎵 **Background Music** | Continuous background theme (toggle on/off) |
+| 💡 **Visual Multiples Display** | Highlights common multiples clearly |
+| 🧠 **Educational Design** | Makes learning engaging for grades 4–7 |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React + Vite** – Fast and modern frontend framework  
+- **Tailwind CSS** – For colorful and responsive UI  
+- **Framer Motion** – For smooth animations  
+- **JavaScript (ES6)** – Core game logic  
+- **HTML5 Audio API** – For background music and sound effects  
+
+---
+
+## 🗂️ Folder Structure
+
+```
+lcm-learning-game/
+│
+├── public/
+│   └── sounds/
+│       ├── background.mp3     # Background music
+│       ├── correct.mp3        # Correct answer sound
+│       ├── wrong.mp3          # Wrong answer sound
+│       └── victory.mp3        # (Optional) Victory sound
+│
+├── src/
+│   ├── sounds.js              # Central sound manager file
+│   ├── App.jsx                # Intro screen + background music
+│   ├── Game.jsx               # Interactive game logic
+│   ├── main.jsx               # React entry point
+│   └── index.css              # Tailwind CSS setup
+│
+└── index.html
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/lcm-learning-game.git
+cd lcm-learning-game
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run Development Server
+
+```bash
+npm run dev
+```
+
+Then open: 👉 [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🎮 How to Play
+
+1. 🧠 Read the **intro screen** to learn about LCM.  
+2. 🎵 Toggle background music on/off (top-right corner).  
+3. ▶ Click **“Start Game”** to begin.  
+4. 🔢 Choose the correct **LCM** of two numbers shown.  
+5. ✅ Hear a cheerful sound if correct!  
+6. ❌ Wrong? Try again! The screen flashes red for a moment.  
+7. 🏆 Keep playing to increase your score!
+
+---
+
+## 📦 Dependencies
+
+| Package | Purpose |
+|----------|----------|
+| `react`, `react-dom` | Core React libraries |
+| `vite` | Fast development environment |
+| `tailwindcss` | Utility-first CSS styling |
+| `framer-motion` | Animations and transitions |
+| `postcss`, `autoprefixer` | CSS processing for Tailwind |
+
+---
+
+## 🎵 Sound Management (`src/sounds.js`)
+
+All music and sound effects are stored and exported from a single file:
+
+```js
+export const backgroundMusic = "/sounds/background.mp3";
+export const correctSound = "/sounds/correct.mp3";
+export const wrongSound = "/sounds/wrong.mp3";
+
+export function playSound(src, volume = 1.0) {
+  const audio = new Audio(src);
+  audio.volume = volume;
+  audio.play();
+}
+```
+
+You can use `playSound(correctSound)` anywhere in your app!
+
+---
+
+## 🌈 Educational Value
+
+This project helps students:
+- Understand **multiples and common multiples**
+- Identify the **smallest common multiple (LCM)**
+- Build **quick mental math skills**
+- Learn visually through color + interactivity
+
+---
+
+## 📸 Preview
+
+**Intro Screen**
+> Animated explanation of LCM concept with example.
+
+**Game Screen**
+> Two number lists with highlighted common multiples.  
+> Students choose the correct LCM and receive feedback instantly.
+
+---
+
+## 🧑‍💻 Future Improvements
+
+- 🏆 Add celebration screen with confetti + victory music  
+- 📊 Add level progression (Easy → Medium → Hard)  
+- 🔢 Add HCF (Highest Common Factor) mode  
+- 🌍 Add multilingual voice narration (for younger students)
+
+---
+
+## 👩‍🏫 Credits
+
+Developed by: **Your Name / Team Name**  
+Guided by: *Math + Coding Integration Project for Grades 4–7*  
+Sounds from: [Pixabay Free Sounds](https://pixabay.com/sound-effects/)  
+Framework: [React + Vite](https://vitejs.dev/)  
+
+---
+
+## 🪪 License
+
+This project is open-source under the **MIT License**.  
+You are free to modify, share, and use it for educational purposes.
