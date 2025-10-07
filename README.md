@@ -57,7 +57,7 @@ lcm-learning-game/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/lcm-learning-game.git
+git clone https://github.com/Hps-world/lcm-game.git
 cd lcm-learning-game
 ```
 
